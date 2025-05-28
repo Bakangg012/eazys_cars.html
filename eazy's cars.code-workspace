@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../Documents/eazy's cars"
+		},
+		{
+			"path": "../../Documents/Documents/eazy's cars"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "eazy's cars"
+	}
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Eazy's Cars</title>
+    <script src="LogInauth.js" defer></script>
+    <script src="current_page_highlight.js" defer></script>
+    <link rel="stylesheet" href="eazys_cars.css">
+    
+    <script>
+        window.onload = function() {
+            checkLogin(); // Redirects users who are not logged in
+        };
+    </script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header>
+            <img src="eazys dealership.jpg" alt="Eazy's Dealership Logo">
+        </header>
+
+       
+            <div class="welcome-container">
+                <h1 class="welcome-title">Welcome to Eazy's Cars</h1>
+            </div>
+
+<p><strong>"Drive Your Dream"</strong></p>
+
+             <nav>
+            <a href="eazys_cars.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="services.html">Services</a>
+            <a href="eazys_cars_contacts.html">Contacts</a>
+            <a href="feedback.html" class="feedback-button">Feedback</a>
+            <a href="inbox.html" class="notification">
+                <span>Inbox</span>
+                <span class="badge">1</span>
+            </a> 
+        </nav>
+
+            <main>
+
+            <h2>Contact Us</h2>
+            <p>
+                Have questions or need assistance? Reach out to our team at <strong>Eazys' Cars</strong>. 
+                We're here to help you find the perfect vehicle and provide the best customer service experience.
+            </p>
+            <p>Email: <a href="mailto:eazyscars12@gmail.com">support@eazyscars.com</a></p>
+            <p>Phone: <a href="tel:+26774147516">+267 74147516</a></p>
+            <p>Visit Us: 123 Car Dealership Street, Auto City</p>
+            <p>You can also click the images below to visit our social media platforms</p>
+
+            <div class="social-icons">
+                <a href="https://www.Facebook.com" target="_blank">
+                    <img src="facebook.png" alt="Facebook" width="200" height="200">
+                </a>
+
+                <a href="https://www.Twitter.com" target="_blank">
+                    <img src="twitterx (1).png" alt="Twitter" width="200" height="200">
+                </a>
+
+                <a href="https://www.Instagram.com" target="_blank">
+                    <img src="intagram.png" alt="Instagram" width="200" height="200">
+                </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Eazy's Cars</p>
+            <img src="logo.jpeg" alt="Logo" class="footer-logo">
+        </footer>
+    </div>
+
+      <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑ Top</button>
+
+    <script>
+  // Show button when scrolled down 100px
+  window.onscroll = function() {
+    document.getElementById("backToTopBtn").style.display =
+      (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
+      ? "block" : "none";
+  };
+
+  // Scroll to top when button is clicked
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Eazy's Cars</title>
+
+  <script src="auth.js" defer></script>
+  <link rel="stylesheet" href="eazys_cars.css" />
+
+  <script>
+    window.onload = function () {
+      checkLogin(); // Redirects users who are not logged in
+    };
+
+    function filterServices() {
+      const selected = document.getElementById("serviceFilter").value;
+      const items = document.querySelectorAll(".gallery-item");
+
+      items.forEach(item => {
+        const category = item.getAttribute("data-category");
+        item.style.display = (selected === "all" || category === selected) ? "" : "none";
+      });
+    }
+  </script>
+
+  
+</head>
+
+<body>
+  <div class="container-fluid">
+
+   
+    <header>
+      <img src="eazys dealership.jpg" alt="Eazy's Dealership Logo" />
+    </header>
+
+   
+    <div class="welcome-container">
+      <h1 class="welcome-title">Welcome to Eazy's Cars</h1>
+     
+    </div>
+    
+ <p><strong>"Drive Your Dream"</strong></p>
+
+    <nav>
+  <a href="eazys_cars.html">Home</a>
+  <a href="cars.html">Cars</a>
+  <a href="services.html">Services</a>
+  <a href="eazys_cars_contacts.html">Contacts</a>
+  <a href="inbox.html" class="notification">
+    <span>Inbox</span>
+    <span class="badge">1</span>
+  </a> 
+</nav>
+
+  <select id="serviceFilter" onchange="filterServices()">
+  <option value="all">All Services</option>
+  <option value="Car Parts">Car Parts</option>
+  <option value="Maintenance">Maintenance</option>
+  <option value="Repair">Repair</option>
+  <option value="Roadside Assistance">Roadside Assistance</option>
+  <option value="Trade-ins">Trade-ins</option>
+</select>
+
+<script>
+function filterServices() {
+    const selected = document.getElementById('serviceFilter').value;
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.style.display = 
+            (selected === 'all' || item.dataset.category === selected) 
+            ? 'inline-block' 
+            : 'none';
+    });
+}
+</script>
+    
+
+    
+
+   
+    <main>
+      <p style="font-size: 18px; line-height: 1.6; color: #333; text-align: justify; margin: 20px 0;">
+        At <strong>Eazys' Cars</strong>, we offer a range of expert services to keep your car in top condition.
+        Our team of professionals is dedicated to maintaining your vehicle's performance and longevity.
+      </p>
+      <p>From routine maintenance to specialized repairs, we provide tailored solutions for all your car needs.</p>
+
+
+
+       <section class="gallery">
+      <figure class="gallery-item" data-category="Car Parts"  onclick="toggleDescription(this)">
+          <img src="car_parts.jpeg" alt="Car Parts" />
+          <figcaption>
+            <span class="hidden">
+              <br><strong>Service:</strong> Car Parts
+              <br><strong>Date:</strong> 2024
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+      
+       <figure class="gallery-item" data-category="Maintenance"  onclick="toggleDescription(this)">
+          <img src="maintenance.jpeg" alt="Maintenance" />
+          <figcaption>
+            <span class="hidden">
+              <br><strong>Service:</strong> Maintenance
+              <br><strong>Date:</strong> 2024
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+      
+       <figure class="gallery-item" data-category="Repair"  onclick="toggleDescription(this)">
+          <img src="repair.jpeg" alt="Repair" />
+          <figcaption>
+            <span class="hidden">
+              <br><strong>Service:</strong> Repair
+              <br><strong>Date:</strong> 2024
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+      
+      <figure class="gallery-item" data-category="Roadside Assistance"  onclick="toggleDescription(this)">
+          <img src="roadside_assistance.jpeg" alt="Roadside Assistance" />
+          <figcaption>
+            <span class="hidden">
+              <br><strong>Service:</strong> Roadside Assistance
+              <br><strong>Date:</strong> 2024
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+      
+       <figure class="gallery-item" data-category="Trade-ins"  onclick="toggleDescription(this)">
+          <img src="trade_ins.png" alt="Trade-ins" />
+          <figcaption>
+            <span class="hidden">
+              <br><strong>Service:</strong> Trade-ins
+              <br><strong>Date:</strong> 2024
+            </span>
+          </figcaption>
+        </figure>
+      </a>
+      </section>
+      
+    </main>
+
+   
+    <footer>
+      <p>&copy; 2025 Eazys' Cars</p>
+      <div class="social-icons">
+        <img src="facebook.png" alt="Facebook" width="30" height="30" />
+        <img src="twitterx (1).png" alt="Twitter" width="30" height="30" />
+        <img src="intagram.png" alt="Instagram" width="30" height="30" />
+      </div>
+      <img src="logo.jpeg" alt="Logo" class="footer-logo" />
+    </footer>
+
+  </div>
+
+   <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑ Top</button>
+
+    <script>
+  // Show button when scrolled down 100px
+  window.onscroll = function() {
+    document.getElementById("backToTopBtn").style.display =
+      (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
+      ? "block" : "none";
+  };
+
+  // Scroll to top when button is clicked
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>

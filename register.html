@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Eazy's Cars</title>
+    <script src="registerauth.js" defer></script>
+
+    <link rel="stylesheet" href="eazys_cars.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Register an Account</h2>
+
+        <form onsubmit="register(event)">
+            <div class="mb-3">
+                <label for="reg-username" class="form-label"><b>Username</b></label>
+                <input type="text" id="reg-username" class="form-control" placeholder="Enter Username" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="reg-password" class="form-label"><b>Password</b></label>
+                <input type="password" id="reg-password" class="form-control" placeholder="Enter Password" required>
+            </div>
+
+            <button type="submit" class="btn btn-success">Register</button>
+        </form>
+
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+    </div>
+
+</body>
+</html>

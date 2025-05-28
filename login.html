@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login - Eazys Cars</title>
+    <link rel="stylesheet" href="eazys_cars.css">
+    <script src="login.js" defer></script>
+    <script src="LogInauth.js" defer></script>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; }
+
+         
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        
+        button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover { opacity: 0.8; }
+
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+
+        .imgcontainer {
+            margin: 24px 0 12px 0;
+            float: right;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container { padding: 16px; }
+
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto 15% auto;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+
+        .close:hover, .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 300px) {
+            span.psw {
+                display: block;
+                float: none;
+            }
+            .cancelbtn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<h2>Eazys Cars Login</h2>
+
+<!-- Open Login Modal -->
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<!-- Login Modal -->
+<div id="id01" class="modal">
+    <form class="modal-content animate" onsubmit="return login(event)">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">
+                &times;
+
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="uname" placeholder="Enter Username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="psw" placeholder="Enter Password" required>
+            
+            <button type="submit">Login</button>
+            <label>
+                <input type="checkbox" checked="checked"> Remember me
+            </label>
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    </form>
+</div>
+
+<script>
+  function login(event) {
+      event.preventDefault(); // Prevent default form submission
+  
+      let username = document.getElementById("uname").value.trim();
+      let password = document.getElementById("psw").value.trim();
+  
+      if (username === "" || password === "") {
+          alert("Please enter a username and password!");
+          return false;
+      }
+  
+      // Dummy user database (Replace with backend authentication)
+      let users = {
+          "admin": "admin",
+          "user1": "user1",
+          "test": "test123"
+      };
+  
+      if (users[username] && users[username] === password) {
+          // Save user session
+          localStorage.setItem("loggedInUser", username);
+          
+          alert("Login Successful! Redirecting...");
+          
+          
+          setTimeout(() => {
+              window.location.href = "eazys_cars.html"; // Change this to your homepage URL
+          }, 500);
+  
+          return true;
+      } else {
+          alert("Invalid username or password.");
+          return false;
+      }
+  }
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let logoutTime = sessionStorage.getItem("logoutTime");
+    
+        if (logoutTime) {
+            let timeElapsed = Date.now() - parseInt(logoutTime, 10);
+            let redirectTime = 30000; // 30 seconds
+    
+            if (timeElapsed >= redirectTime) {
+                console.log("Time exceeded. Redirecting to home page...");
+                window.location.href = "eazys_cars.html"; // Redirect immediately
+            } else {
+                let remainingTime = redirectTime - timeElapsed;
+                console.log(`Redirecting in ${remainingTime / 1000} seconds...`);
+    
+                setTimeout(function () {
+                    console.log("Redirecting to home page...");
+                    window.location.href = "eazys_cars.html";
+                }, remainingTime);
+            }
+        } else {
+            console.log("No logout time found, not redirecting.");
+        }
+    });
+    </script>
+    
+
+</body>
+</html>

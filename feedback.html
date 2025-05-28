@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback - Eazy's Cars</title>
+   <link rel="stylesheet" href="eazys_cars.css">
+<script src="LogInauth.js" defer></script>
+<script src="current_page_highlight.js" defer></script>
+<script>
+    window.onload = function() {
+        checkLogin(); // Redirects users who are not logged in
+    };
+</script>
+</head>
+<body>
+    <form id="feedbackForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" required></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+     <!-- Buttons -->
+        <div class="feedback-button">
+            <a href="eazys_cars.html" class="back-home-btn">Back to Home</a>
+        </div>
+
+    <script>
+        document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your feedback!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

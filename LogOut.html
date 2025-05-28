@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Eazys Cars</title>
+    <link rel="stylesheet" href="eazys_cars.css">
+    <link rel="stylesheet" href="LogIn_signUp.css">
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Clear session and local storage
+            localStorage.removeItem("loggedInUser");
+            sessionStorage.setItem("logoutTime", Date.now()); // Store logout time
+            
+            // Redirect to home page after 2 seconds
+            setTimeout(() => {
+                window.location.href = "eazys_cars.html";
+            }, 2000);
+        });
+    </script>
+</head>
+<body>
+
+    <div class="logout-container">
+        <h2>You have been logged out</h2>
+        <p>Redirecting to the home page...</p>
+        <p>If you are not redirected, <a href="eazys_cars.html">click here</a>.</p>
+    </div>
+
+</body>
+</html>

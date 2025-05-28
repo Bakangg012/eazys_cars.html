@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Eazy's Cars</title>
+    <script src="LogInauth.js" defer></script>
+    <script src="current_page_highlight.js" defer></script>
+    <link rel="stylesheet" href="eazys_cars.css">
+
+    <script>
+        window.onload = function() {
+            checkLogin(); // Redirects users who are not logged in
+        };
+    </script>
+
+    <style>
+        .hidden {
+            display: none;
+        }
+        .gallery-item {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <header>
+            <img src="eazys dealership.jpg" alt="Eazy's Dealership Logo">
+        </header>
+        
+        <div class="welcome-container">
+            <h1 class="welcome-title">Welcome to Eazy's Cars</h1>
+        </div>
+        
+        <p><strong>"Drive Your Dream"</strong></p>
+
+        <nav>
+            <a href="eazys_cars.html">Home</a>
+            <a href="cars.html">Cars</a>
+            <a href="services.html">Services</a>
+            <a href="eazys_cars_contacts.html">Contacts</a>
+             <a href="inbox.html" class="notification">
+                <span>Inbox</span>
+                <span class="badge">1</span>
+            </a> 
+            
+
+    <a href="cart.html" 
+    style="display: block; text-align: right; padding: 10px 20px; background-color: #ffffff; color: rgb(0, 0, 0); text-decoration: none; border-radius: 5px; font-size: 16px; margin-top: 20px;">
+    <img src="cart.jpeg" alt="Cart" style="width: 40px; height: 25px; margin-right: 8px;">
+    Go to Cart
+ </a>
+
+ </nav>
+
+ 
+
+ <label for="carFilter"><strong>Filter by cars:</strong></label>
+ <select id="carFilter" onchange="filterCars()">
+   <option value="All">All</option>
+   <option value="sedan">Sedan</option>
+   <option value="Luxury">Luxury</option>
+   <option value="Sport">Sport</option>
+   <option value="Trucks">Trucks</option>
+ </select>
+
+         
+    <form onsubmit="return false;">
+        <input type="text" id="search" placeholder="Search cars..." onkeyup="filterCars()">
+    </form>
+
+ 
+  <a href="BMW.html" class="car-logo-link">
+    <img src="BMW_logopng.png" alt="BMW Logo"> 
+  </a>
+
+  
+  <a href="TOYOTA.html" class="car-logo-link">
+    <img src="TOYOTA_logo.png" alt="Toyota Logo">
+  </a>
+
+        <section class="gallery">
+            <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="bmw.jpeg" alt="BMW" width="300">
+                <figcaption>
+                    BMW - P1 200 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> BMW
+                        <br><strong>Year:</strong> 2024
+                        <br><strong>Engine:</strong> 3.0L Twin-Turbo Inline-6
+                        <br><strong>Horsepower:</strong> 503 HP
+                    </span>
+                    <button onclick="addToCart('BMW', 1200000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+
+           <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="BMW m3.jpeg" alt="BMW M3" width="300">
+                <figcaption>
+                    BMW M3 - P2 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> BMW M3
+                        <br><strong>Engine:</strong> 3.0L Twin-Turbo Inline-6
+                        <br><strong>Horsepower:</strong> 503 HP
+                        <br><strong>Year:</strong> 2024
+                    </span>
+                    <button onclick="addToCart('BMW M3', 2000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="bmw m8.jpeg" alt="BMW M8" width="300">
+                <figcaption>
+                    BMW M8 - P5 200 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> BMW M8
+                        <br><strong>Engine:</strong> 4.4L Twin-Turbo V8
+                        <br><strong>Horsepower:</strong> 617 HP
+                        <br><strong>Year:</strong> 2024
+                    </span>
+                    <button onclick="addToCart('BMW M8', 5200000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+           <figure class="gallery-item" data-category="sport" onclick="toggleDescription(this)">
+                <img src="Bugatti bolide.jpg" alt="Bugatti Bolide" width="300">
+                <figcaption>
+                    Bugatti Bolide - P59 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Bugatti Bolide
+                        <br><strong>Engine:</strong> 8.0L Quad-Turbo W16
+                        <br><strong>Horsepower:</strong> 1,825 HP
+                        <br><strong>Top Speed:</strong> 310 mph
+                    </span>
+                    <button onclick="addToCart('Bugatti Bolide', 59000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="Sport" onclick="toggleDescription(this)">
+                <img src="Dodge challenger.jpeg" alt="Dodge Challenger" width="300">
+                <figcaption>
+                    Dodge Challenger - P1 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Dodge Challenger
+                        <br><strong>Engine:</strong> 6.2L Supercharged V8
+                        <br><strong>Horsepower:</strong> 797 HP
+                        <br><strong>Year:</strong> 2023
+                    </span>
+                    <button onclick="addToCart('Dodge Challenger', 1000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="Sport" onclick="toggleDescription(this)">
+                <img src="Dodge charger.jpeg" alt="Dodge Charger" width="300">
+                <figcaption>
+                    Dodge Charger - P1 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Dodge Charger
+                        <br><strong>Engine:</strong> 6.2L Supercharged V8
+                        <br><strong>Horsepower:</strong> 807 HP
+                        <br><strong>Year:</strong> 2023
+                    </span>
+                    <button onclick="addToCart('Dodge Charger', 1000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="Porsche_911_GT3.jpg" alt="Porsche 911 GT3" width="300">
+                <figcaption>
+                    Porsche 911 GT3 - P2 500 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Porsche 911 GT3
+                        <br><strong>Engine:</strong> 4.0L Flat-6
+                        <br><strong>Horsepower:</strong> 502 HP
+                        <br><strong>Year:</strong> 2024
+                    </span>
+                    <button onclick="addToCart('Porsche 911 GT3',  2500000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="Porsce 911 turbo.jpeg" alt="Porsche 911 Turbo" width="300">
+                <figcaption>
+                    Porsche 911 Turbo - P2 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Porsche 911 Turbo
+                        <br><strong>Engine:</strong> 3.8L Twin-Turbo Flat-6
+                        <br><strong>Horsepower:</strong> 572 HP
+                        <br><strong>Year:</strong> 2024
+                    </span>
+                    <button onclick="addToCart('Porsche 911 Turbo', 2000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+           <figure class="gallery-item" data-category="Sport" onclick="toggleDescription(this)">
+                <img src="Supra mk4.jpeg" alt="Supra MK4" width="300">
+                <figcaption>
+                    Supra MK4 - P1 300 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Supra MK4
+                        <br><strong>Engine:</strong> 3.0L Inline-6 (2JZ)
+                        <br><strong>Horsepower:</strong> 276 HP (Stock)
+                        <br><strong>Year:</strong> 1998
+                    </span>
+                    <button onclick="addToCart('Supra MK4', 1300000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+           <figure class="gallery-item" data-category="Sport" onclick="toggleDescription(this)">
+                <img src="mazda-rx7-1.avif" alt="Mazda RX-7" width="300">
+                <figcaption>
+                    Mazda RX-7 - P1 200 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Mazda RX-7
+                        <br><strong>Engine:</strong> 1.3L Twin-Rotor Wankel
+                        <br><strong>Horsepower:</strong> 276 HP
+                        <br><strong>Year:</strong> 2002
+                    </span>
+                    <button onclick="addToCart('Mazda RX-7', 1200000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+           <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="Ferrari_LaFerrari.jpeg" alt="Ferrari LaFerrari" width="300">
+                <figcaption>
+                    Ferrari LaFerrari - P12 000 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Ferrari LaFerrari
+                        <br><strong>Engine:</strong> 6.3L V12 Hybrid
+                        <br><strong>Horsepower:</strong> 950 HP
+                        <br><strong>Year:</strong> 2015
+                    </span>
+                    <button onclick="addToCart('Ferrari LaFerrari', 12000000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+           <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="LamborghiniUrus.jpeg" alt="Lamborghini Urus" width="300">
+                <figcaption>
+                    Lamborghini Urus - P1 200 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong>Lamborghini Urus
+                        <br><strong>Engine:</strong>4.0LTwin-Turbo V8
+                        <br><strong>Horsepower:</strong>641 HP
+                        <br><strong>Year:</strong>2023
+                    </span>
+                    <button onclick="addToCart('Lamborghini Urus', 1200000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+        
+            <figure class="gallery-item" data-category="luxury" onclick="toggleDescription(this)">
+                <img src="mercedes.jpeg" alt="Mercedes" width="300">
+                <figcaption>
+                    Mercedes-AMG GT - P1 200 000
+                    <span class="hidden">
+                        <br><strong>Model:</strong> Mercedes
+                        <br><strong>Engine:</strong> 4.0L Twin-Turbo V8
+                        <br><strong>Horsepower:</strong> 577 HP
+                        <br><strong>Year:</strong> 2023
+                    </span>
+                    <button onclick="addToCart('Mercedes', 1200000)">Add to Cart</button>
+                </figcaption>
+            </figure>
+
+            
+   <figure class="gallery-item" data-category="Trucks" onclick="toggleDescription(this)">
+        <img src="Land_Cruiser.jpeg" alt="Toyota Land Cruiser" width="300">
+        <figcaption>
+            Toyota Land Cruiser - P1 200 000
+            <span class="hidden">
+                <br><strong>Model:</strong> Toyota Land Cruiser
+                <br><strong>Engine:</strong> 3.5L Twin-Turbo V6
+                <br><strong>Horsepower:</strong> 409 HP
+                <br><strong>Year:</strong> 2024
+            </span>
+            <button onclick="addToCart('Toyota Land Cruiser', 1200000)">Add to Cart</button>
+        </figcaption>
+    </figure>
+
+   <figure class="gallery-item" data-category="Trucks" onclick="toggleDescription(this)">
+        <img src="Ram_TRX.jpeg" alt="Ram 1500 TRX" width="300">
+        <figcaption>
+            Ram 1500 TRX - P1 200 000
+            <span class="hidden">
+                <br><strong>Model:</strong> Ram 1500 TRX
+                <br><strong>Engine:</strong> 6.2L Supercharged V8 (Hellcat)
+                <br><strong>Horsepower:</strong> 702 HP
+                <br><strong>Year:</strong> 2024
+            </span>
+            <button onclick="addToCart('Ram 1500 TRX', 1200000)">Add to Cart</button>
+        </figcaption>
+    </figure>
+
+
+    <figure class="gallery-item" data-category="sedan" onclick="toggleDescription(this)">
+        <img src="Vw_Golf7.jpg" alt="Volkswagen Golf 7" width="300">
+        <figcaption>
+            Volkswagen Golf 7 - P1 200 000
+            <span class="hidden">
+                <br><strong>Model:</strong> Volkswagen Golf 7
+                <br><strong>Engine:</strong> 2.0L Turbocharged Inline-4
+                <br><strong>Horsepower:</strong> 288 HP
+                <br><strong>Year:</strong> 2020
+            </span>
+            <button onclick="addToCart('Volkswagen Golf 7', 1200000)">Add to Cart</button>
+        </figcaption>
+    </figure>
+
+        </section>
+
+        <script src="cart.js"></script>
+
+        <script>
+            function toggleDescription(figure) {
+                const description = figure.querySelector("span");
+                description.classList.toggle("hidden");
+            }
+        </script>
+
+       <script>
+        function toggleDescription(figure) {
+            const description = figure.querySelector("span");
+            description.classList.toggle("hidden");
+        }
+
+        function filterCars() {
+            const searchValue = document.getElementById("search").value.toLowerCase();
+            const cars = document.querySelectorAll(".gallery-item");
+
+            cars.forEach(car => {
+                const carName = car.querySelector("figcaption").textContent.toLowerCase();
+                car.style.display = carName.includes(searchValue) ? "" : "none";
+            });
+        }
+       </script>
+
+   <script>
+  function filterCars() {
+    const searchValue = document.getElementById("search").value.toLowerCase();
+    const selectedCategory = document.getElementById("carFilter").value.toLowerCase();
+    const cars = document.querySelectorAll(".gallery-item");
+
+    cars.forEach(car => {
+      const category = car.getAttribute("data-category").toLowerCase();
+      const carName = car.querySelector("figcaption").textContent.toLowerCase();
+
+      const matchesSearch = carName.includes(searchValue);
+      const matchesCategory = selectedCategory === "all" || category === selectedCategory;
+
+      car.style.display = matchesSearch && matchesCategory ? "block" : "none";
+    });
+  }
+
+  
+  document.getElementById("search").addEventListener("keyup", filterCars);
+  document.getElementById("carFilter").addEventListener("change", filterCars);
+</script>
+
+
+        <footer>
+            <p>&copy; 2025 Eazy's Cars</p>
+            <div class="social-icons">
+                <img src="facebook.png" alt="Facebook" width="30" height="30">
+                <img src="twitterx (1).png" alt="Twitter" width="30" height="30">
+                <img src="intagram.png" alt="Instagram" width="30" height="30">
+            </div>
+            
+<img src="logo.jpeg" alt="Logo" class="footer-logo">
+
+        </footer>
+   
+        
+
+    <button onclick="scrollToTop()" id="backToTopBtn" title="Go to top">↑ Top</button>
+
+    <script>
+  // Show button when scrolled down 100px
+  window.onscroll = function() {
+    document.getElementById("backToTopBtn").style.display =
+      (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100)
+      ? "block" : "none";
+  };
+
+  // Scroll to top when button is clicked
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+
+</body>
+</html>

@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setTimeout(function () {
                 console.log("Redirecting to home page...");
-                window.location.href = "eazys_cars.html";
+                window.location.href = "index.html";
             }, remainingTime);
         }
     }

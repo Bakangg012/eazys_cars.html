@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (timeElapsed >= redirectTime) {
             console.log("Time exceeded. Redirecting to home page...");
-            window.location.href = "eazys_cars.html"; 
+            window.location.href = "index.html"; 
         } else {
             let remainingTime = redirectTime - timeElapsed;
             console.log(`Redirecting in ${remainingTime / 1000} seconds...`);

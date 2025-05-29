@@ -15,7 +15,7 @@ function validateLogin(event) {
     if (users[username] && users[username] === password) {
         alert("Login Successful!");
         localStorage.setItem("loggedInUser", username); // Store session
-        window.location.href = "eazys_cars.html"; // Redirect to home page
+        window.location.href = "index.html"; // Redirect to home page
     } else {
         alert("Invalid username or password.");
     }

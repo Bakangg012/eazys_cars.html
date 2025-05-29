@@ -29,7 +29,7 @@ function login(event) {
     if (users[username] && users[username] === password) {
         localStorage.setItem("loggedInUser", username);
         alert("Login successful!");
-        window.location.href = "eazys_cars.html"; // Redirect to Home Page
+        window.location.href = "index.html"; // Redirect to Home Page
     } else {
         alert("Invalid username or password!");
     }
